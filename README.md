@@ -1,5 +1,8 @@
-## Hi there 👋
 
+# 👋 Hi, I’m Tanfu Shi
+- 📚 I am a Master's student at the University of Illinois at Urbana Champaign
+- 📫 Here's my [resume]([https://drive.google.com/file/d/1S-zMqEebBi4nZOWuhZrpOuuPK-YK-Thb/view?usp=sharing](https://drive.google.com/file/d/1qGemyO5HrI5i9C1Sosxvdm-avyNcsHXC/view?usp=sharing))
+- 😄 I enjoy exploring Statistics, History & Social science
 <!--
 **Tanfushi/Tanfushi** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
