@@ -7,7 +7,7 @@ frontend:
     build:
       commands: []  # 没有需要构建的内容，可以将构建命令留空
   artifacts:
-    baseDirectory: /  # 设置为你网站的根目录
+    baseDirectory: frontend # 设置为你网站的根目录
     files:
       - '**/*'
   cache:
