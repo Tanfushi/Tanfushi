@@ -108,9 +108,13 @@
             // 发送表单数据到服务器
             fetch('https://api52416f45.execute-api.us-east-1.amazonaws.com/dev/items', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'us-east-1_HdNKd4OkV' // 替换为您的身份验证令牌
+    },
     body: JSON.stringify({ name, email, message })
 })
+
 
 
             .then(response => {
