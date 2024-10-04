@@ -3,14 +3,14 @@ frontend:
   phases:
     preBuild:
       commands:
-        - npm install
+        - npm install  # 如果你有依赖
     build:
-      commands:
-        - npm run build
+      commands: []  # 没有需要构建的内容，可以将构建命令留空
   artifacts:
-    baseDirectory: build  # 这里指定构建输出目录
+    baseDirectory: /  # 设置为你网站的根目录
     files:
       - '**/*'
   cache:
     paths:
       - node_modules/**/*
+
