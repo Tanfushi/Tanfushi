@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "paths": {
+    "/items": {
+      "name": "/items",
+      "lambdaFunction": "tanfu558ea07e",
+      "permissions": {
+        "setting": "protected",
+        "auth": [
+          "update"
+        ],
+        "guest": [
+          "update"
+        ]
+      }
+    }
+  }
+}

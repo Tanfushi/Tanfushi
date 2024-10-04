@@ -17,7 +17,9 @@
             <nav>
                 <ul>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
                     <li><a href="#projects">Projects</a></li>
+                    <li><a href="#hobby">Hobby</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -28,7 +30,7 @@
     <section id="hero">
         <div class="container">
             <h2>Hi, I'm Tanfu</h2>
-            <p>Welcome to my personal zone. I'm a master student from UIUC who loves coding and building web experiences.</p>
+            <p>“The best way to predict your future is to create it.” —Abraham Lincoln.</p>
             <a href="#contact" class="btn">Contact Me</a>
         </div>
     </section>
@@ -37,9 +39,26 @@
     <section id="about" class="section">
         <div class="container">
             <h2>About Me</h2>
-            <div class="about-content" style="flex-wrap: wrap;"> <!-- 确保在小屏幕设备上换行 -->
-                <img src="profile.jpg" alt="Tanfu's Photo" style="max-width: 100%; height: auto;">
-                <p>Hello! I'm Tanfu, a web developer with a passion for creating dynamic and user-friendly websites. I have experience in various web technologies like HTML, CSS, JavaScript, and frameworks like React.js. I'm constantly learning and love to work on innovative projects.</p>
+            <div class="about-content">
+                <img src="profile.jpg" alt="Tanfu's Photo">
+                <p>Hello! I'm Tanfu, a master student in Statistics from UIUC. I have experience in various web technologies like HTML, CSS, JavaScript, and frameworks like React.js. I'm constantly learning and love to work on innovative projects.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2>Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Company A (2022-2023)</h3>
+                    <p>Worked as a Data Analyst, focusing on data visualization and model building.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Company B (2021-2022)</h3>
+                    <p>Interned as a Web Developer, developing and optimizing front-end features.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -60,6 +79,23 @@
                 <div class="project-card">
                     <h3>Project 3</h3>
                     <p>This is a machine learning project, utilizing Python and TensorFlow to analyze data and predict outcomes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hobby Section -->
+    <section id="hobby" class="section">
+        <div class="container">
+            <h2>Hobby</h2>
+            <div class="hobby-grid">
+                <div class="hobby-item">
+                    <h3>Tennis</h3>
+                    <p>I enjoy playing tennis in my free time.</p>
+                </div>
+                <div class="hobby-item">
+                    <h3>Photography</h3>
+                    <p>I love capturing moments with my camera.</p>
                 </div>
             </div>
         </div>
@@ -94,6 +130,19 @@
             <p>&copy; 2024 Tanfu's Zone. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <!-- JavaScript 动画效果 -->
+    <script>
+        document.querySelectorAll('.timeline-item').forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('expanded');
+            });
+        });
+    </script>
+</body>
+</html>
+
+
 
     <!-- JavaScript 文件 -->
     <script>
