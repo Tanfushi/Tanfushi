@@ -104,39 +104,84 @@ nav ul li a:hover {
 #experience {
     background-color: #f9f9f9;
     padding: 50px 0;
+    position: relative;
 }
 
 .timeline {
-    display: flex;
-    flex-direction: column;
+    position: relative;
+    margin: 20px 0;
+    padding-left: 40px; /* 增加左边的间距，用于时间轴 */
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 20px; /* 竖轴的位置 */
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #ccc; /* 时间轴的颜色 */
 }
 
 .timeline-item {
+    position: relative;
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -15px; /* 小圆圈的位置 */
+    top: 10px;
+    width: 12px;
+    height: 12px;
+    background-color: #f45b69; /* 时间节点的颜色 */
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px #fff;
+}
+
+.timeline-content {
     background-color: #fff;
     padding: 20px;
-    margin-bottom: 20px;
     border-radius: 8px;
-    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
 }
 
-.timeline-item.expanded {
-    background-color: #eee;
-    max-height: 200px;
-    transition: all 0.5s ease;
-}
-
-.timeline-item h3 {
+.timeline-content h3 {
     font-size: 1.4rem;
 }
 
-.timeline-item p {
-    font-size: 1rem;
-    display: none;
+.timeline-content span {
+    display: block;
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 10px;
 }
 
-.timeline-item.expanded p {
-    display: block;
+.timeline-content p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.timeline-item:hover .timeline-content {
+    background-color: #f4f4f4; /* 鼠标悬停时的效果 */
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .timeline {
+        padding-left: 20px; /* 减少小屏幕的左边间距 */
+    }
+
+    .timeline::before {
+        left: 10px; /* 时间轴左移 */
+    }
+
+    .timeline-item::before {
+        left: -10px; /* 时间节点小圆圈左移 */
+    }
 }
 
 /* Projects Section */
