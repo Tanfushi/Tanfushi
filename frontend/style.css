@@ -344,24 +344,47 @@ footer {
         width: 90%;
     }
 
+    /* 项目卡片在平板上两列布局 */
     .project-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* 兴趣卡片在平板上单列布局 */
+    .hobby-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* 调整时间轴的样式 */
+    #experience::before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        left: 50px;
+        padding-left: 30px;
+    }
+
+    .timeline-item::before {
+        left: -30px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* 小屏幕调整项目和兴趣卡片为单列布局 */
+    .project-grid {
+        grid-template-columns: 1fr;
     }
 
     .hobby-grid {
         grid-template-columns: 1fr;
     }
-}
 
-@media (max-width: 480px) {
-    .project-grid {
-        grid-template-columns: 1fr;
-    }
-
+    /* 小屏幕表单自适应 */
     form {
         max-width: 100%;
     }
 
+    /* 关于我的内容垂直排列 */
     .about-content {
         flex-direction: column;
         text-align: center;
@@ -370,6 +393,16 @@ footer {
     .about-content img {
         margin: 0 auto;
         margin-bottom: 20px;
+    }
+
+    /* 时间轴适应移动端 */
+    .timeline-item {
+        left: 20px;
+        padding-left: 20px;
+    }
+
+    .timeline-item::before {
+        left: -20px;
     }
 }
 
