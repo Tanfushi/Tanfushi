@@ -28,7 +28,7 @@
     <section id="hero">
         <div class="container">
             <h2>Hi, I'm Tanfu</h2>
-            <p>Welcome to my personal zone. I'm a passionate developer who loves coding and building web experiences.</p>
+            <p>Welcome to my personal zone. I'm a master student from UIUC who loves coding and building web experiences.</p>
             <a href="#contact" class="btn">Contact Me</a>
         </div>
     </section>
@@ -37,8 +37,8 @@
     <section id="about" class="section">
         <div class="container">
             <h2>About Me</h2>
-            <div class="about-content">
-                <img src="your-photo.jpg" alt="Tanfu's Photo">
+            <div class="about-content" style="flex-wrap: wrap;"> <!-- 确保在小屏幕设备上换行 -->
+                <img src="profile.jpg" alt="Tanfu's Photo" style="max-width: 100%; height: auto;">
                 <p>Hello! I'm Tanfu, a web developer with a passion for creating dynamic and user-friendly websites. I have experience in various web technologies like HTML, CSS, JavaScript, and frameworks like React.js. I'm constantly learning and love to work on innovative projects.</p>
             </div>
         </div>
@@ -106,10 +106,10 @@
             const message = document.getElementById('message').value;
 
             // 发送表单数据到服务器
-            fetch('https://vghegaqhi7.execute-api.us-east-1.amazonaws.com/dev/items', {  // 替换为你的API URL
+            fetch('https://vghegaqhi7.execute-api.us-east-1.amazonaws.com/dev/items', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({ name, email, message })
             })
@@ -127,8 +127,10 @@
                 console.error('Error:', error);
                 alert('Failed to send message: ' + error.message);
             });
+
         });
     </script>
 </body>
 </html>
+
 

@@ -13,7 +13,6 @@ body {
     margin: 0 auto;
 }
 
-/* 导航栏样式 */
 header {
     background-color: #333;
     color: white;
@@ -108,7 +107,7 @@ nav ul li a:hover {
 
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* 3列布局 */
     gap: 20px;
 }
 
@@ -187,3 +186,63 @@ footer {
     padding: 20px 0;
 }
 
+/* 响应式设计 - 针对平板和移动设备 */
+@media (max-width: 768px) {
+    /* 调整导航栏布局为垂直排列 */
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* 调整容器宽度 */
+    .container {
+        width: 90%;
+    }
+
+    /* 让项目卡片在小屏幕上显示成两列 */
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* 调整 Hero Section 字体大小 */
+    #hero h2 {
+        font-size: 2rem;
+    }
+
+    #hero p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* 小屏幕上项目卡片一列显示 */
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* 让标题和按钮更适合小屏幕 */
+    #hero h2 {
+        font-size: 1.5rem;
+    }
+
+    #hero p {
+        font-size: 0.9rem;
+    }
+
+    /* 让表单自适应小屏幕 */
+    form {
+        max-width: 100%;
+    }
+
+    /* 调整图像的大小和布局 */
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-content img {
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+}
