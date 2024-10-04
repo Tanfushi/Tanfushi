@@ -64,7 +64,7 @@
                             learning into a Dashboard, and identify the patterns of transferring of different social groups and connections about the responses and
                             dependent variables. Connecting dots between data results with real life social phenomena.</p>
                     </div>
-                    <span class="timeline-date">2022</span>
+                    <span class="timeline-date">2024</span>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
@@ -78,7 +78,7 @@
                             models to assess the potential of enterprises from multiple dimensions, including patent analysis, EVA analysis, Personnel changes and
                             corporate social responsibility; achieved a high-potential list of companies with a 90% confidence interval in R</p>
                     </div>
-                    <span class="timeline-date">2021</span>
+                    <span class="timeline-date">2022</span>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
@@ -90,7 +90,7 @@
                             dimensions of both time series and spatial lattice; used data visualization tools in Python to interpret and present the main characteristics of
                             precipitation at different spatial scales on seasonal time dimensions</p>
                     </div>
-                    <span class="timeline-date">2021</span>
+                    <span class="timeline-date">2020</span>
                 </div>
             </div>
         </div>
@@ -166,11 +166,21 @@
 
     <!-- JavaScript 动画效果 -->
     <script>
-        document.querySelectorAll('.timeline-item').forEach(item => {
-            item.addEventListener('click', () => {
-                item.classList.toggle('expanded');
-            });
+        document.addEventListener('DOMContentLoaded', function() {
+    const items = document.querySelectorAll('.timeline-item');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+            }
         });
+    });
+
+    items.forEach(item => {
+        observer.observe(item);
+    });
+});
     </script>
 </body>
 </html>
