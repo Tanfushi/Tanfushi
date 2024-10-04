@@ -81,8 +81,8 @@
                     <button type="submit">Send Message</button>
                 </form>
                 <div class="social-links">
-                    <a href="https://github.com/yourprofile" target="_blank">GitHub</a>
-                    <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/Tanfushi" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/tanfu-shi-02245b28a/" target="_blank">LinkedIn</a>
                 </div>
             </div>
         </div>
@@ -106,13 +106,14 @@
             const message = document.getElementById('message').value;
 
             // 发送表单数据到服务器
-            fetch('http://localhost:3001/contact', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ name, email, message }),
-            })
+            fetch('https://api52416f45.amazonaws.com/items', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ name, email, message }),
+})
+
             .then(response => {
                 if (response.ok) {
                     return response.text();
