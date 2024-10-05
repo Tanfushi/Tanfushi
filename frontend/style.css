@@ -440,7 +440,7 @@ footer {
     }
 
     nav ul li {
-        margin-left: 20px; /* 每个菜单项之间增加间距 */
+        margin-left: 10px; /* 每个菜单项之间增加间距 */
     }
 }
 
