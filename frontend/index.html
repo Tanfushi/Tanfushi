@@ -48,8 +48,6 @@
         </div>
     </header>
 
-    
-
     <!-- Hero Section -->
     <section id="hero">
         <div class="container">
@@ -78,28 +76,22 @@
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3>Sichuan,China  (2001.9 - 2019.6)</h3>
-                        <p>I spent my first 18 years mainly in Sichuan, China, except few travels outside. I was traveliing between Guangyuan, Mianyang and Chengdu. I made some
-                            life-long friends along the way and shaped my worldview on the road. After I spent 6 years in a private high school, I started my new journey to another
-                            destination.
-                        </p>
+                        <p>I spent my first 18 years mainly in Sichuan, China, except for a few travels outside. I traveled between Guangyuan, Mianyang, and Chengdu. I made some
+                            life-long friends along the way and shaped my worldview on the road.</p>
                     </div>
                     <span class="timeline-date">18 years</span>
+                </div>
+                <div class="timeline-item">
                     <div class="timeline-content">
                         <h3>Nanjing, China (2019.8 - 2023.6)</h3>
-                        <p>I got good grades in the entrance exam to college in China, and I was lucky enough to enter one of the best universities there. In the 4 years
-                            of studying physics and maths, I began to discover what I am interested in my life and what I will devote my life into. Being involved in various 
-                            of social activities makes me open-minded and always try to do something to repay the society.
-                        </p>
+                        <p>I entered one of the best universities in China to study physics and maths. These 4 years shaped my understanding of what I want to pursue in life and how I can contribute to society.</p>
                     </div>
-                    <span class="timeline-date">4 years</span>
+                    <span class="timeline-date">4 years</span>           
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3>Illinois, the United States (2023.8 - present)</h3>
-                        <p>After graduation, I came to the United States, attend graduate program as a master student of Statistics. Based on my previous experience I have demonstrated
-                            extrordinary skills in maths and computer science, and I believe on the way to explore and accomplish myself, I could create more value to this world equipped 
-                            with there tools, and a humble heart always willing to learn.
-                        </p>
+                        <p>After graduation, I came to the United States for graduate studies in Statistics. My background in mathematics and computer science allows me to add value to various projects and continuously learn with humility.</p>
                     </div>
                     <span class="timeline-date">My journey continues...</span>
                 </div>
@@ -114,20 +106,15 @@
             <div class="project-grid">
                 <div class="project-card" style="background-image: url('project1.jpg');">
                     <h3>Data Mining</h3>
-                    <p>I have built AWS cloud date mining tools to scrawl the important news. It helps me catch up with what's going on in this 
-                        world, and collect useful information to make better choices.</p>
+                    <p>I have built AWS cloud data mining tools to crawl important news. It helps me stay updated and make informed decisions.</p>
                 </div>
                 <div class="project-card" style="background-image: url('project2.jpg');">
                     <h3>Website Development</h3>
-                    <p>I have built e-commerce website built with HTML, CSS, and JavaScript. Features a clean design and easy navigation. It helps
-                        me to put theory into practice, and get more interaction with frontier frontend technologies.
-                    </p>
+                    <p>I developed an e-commerce website using HTML, CSS, and JavaScript with clean design and easy navigation, gaining hands-on experience with frontend technologies.</p>
                 </div>
                 <div class="project-card" style="background-image: url('project3.jpg');">
                     <h3>Machine Learning</h3>
-                    <p>I have built machine learing projects, utilizing Python and TensorFlow to analyze data and predict outcomes.It helps my website
-                        and apps become more efficient and train myself into a real working world
-                    </p>
+                    <p>I have built machine learning projects using Python and TensorFlow to analyze data and predict outcomes, improving the efficiency of my apps.</p>
                 </div>
             </div>
         </div>
@@ -146,13 +133,13 @@
                     <h3>Reading</h3>
                     <p>I love reading, especially literature and history.</p>
                 </div>
-                <div class="hobby-item" style="background-image: url('hobby2.jpg');">
+                <div class="hobby-item" style="background-image: url('hobby3.jpg');">
                     <h3>Hiking</h3>
-                    <p>Hiking always refreshes me after a tiring week</p>
+                    <p>Hiking always refreshes me after a tiring week.</p>
                 </div>
-                <div class="hobby-item" style="background-image: url('hobby2.jpg');">
-                    <h3>Travelling</h3>
-                    <p>Always enbrace inclusion, diversity and cultural communication</p>
+                <div class="hobby-item" style="background-image: url('hobby4.jpg');">
+                    <h3>Traveling</h3>
+                    <p>I embrace inclusion, diversity, and cultural communication while traveling.</p>
                 </div>
             </div>
         </div>
@@ -188,85 +175,70 @@
         </div>
     </footer>
 
-    <!-- JavaScript 动画效果 -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-    // 滚动动画效果：Intersection Observer API
-    const items = document.querySelectorAll('.timeline-item');
-
-    const observerOptions = {
-        root: null,
-        threshold: 0.1, // 当元素10%进入视口时触发
-        rootMargin: "0px"
-    };
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('show');
-                observer.unobserve(entry.target);  // 添加后取消观察，避免重复触发
-            }
-        });
-    }, observerOptions);
-
-    items.forEach(item => {
-        observer.observe(item);
-    });
-
-    // 汉堡菜单按钮显示/隐藏导航栏
-    const mobileMenu = document.querySelector('#mobile-menu');
-    const navList = document.querySelector('#nav-list');
-
-    // 点击汉堡按钮时显示或隐藏导航菜单
-    mobileMenu.addEventListener('click', function() {
-        navList.classList.toggle('active');  // 切换导航栏的显示状态
-        mobileMenu.classList.toggle('is-active'); // 切换按钮的样式（变成X）
-    });
-});
-
-    </script>
-</body>
-</html>
-
-
-
-
-    <!-- JavaScript 文件 -->
-    <script>
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault(); // 阻止表单默认提交
-
-            // 获取表单输入值
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-
-            // 发送表单数据到服务器
-            fetch('https://vghegaqhi7.execute-api.us-east-1.amazonaws.com/dev/items', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ name, email, message })
-            })
-            .then(response => {
-                if (response.ok) {
-                    return response.text();
-                } else {
-                    throw new Error('Something went wrong');
-                }
-            })
-            .then(data => {
-                alert('Message sent successfully!');
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('Failed to send message: ' + error.message);
+            // 滚动动画效果：Intersection Observer API
+            const items = document.querySelectorAll('.timeline-item');
+            const observerOptions = {
+                root: null,
+                threshold: 0.1,
+                rootMargin: "0px"
+            };
+    
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                        observer.unobserve(entry.target); // 添加后取消观察，避免重复触发
+                    }
+                });
+            }, observerOptions);
+    
+            items.forEach(item => {
+                observer.observe(item);
             });
-
+    
+            // 汉堡菜单按钮显示/隐藏导航栏
+            const mobileMenu = document.querySelector('#mobile-menu');
+            const navList = document.querySelector('#nav-list');
+    
+            mobileMenu.addEventListener('click', function() {
+                navList.classList.toggle('active'); // 切换显示导航栏
+                mobileMenu.classList.toggle('is-active'); // 切换汉堡菜单按钮动画
+            });
+    
+            // 表单提交处理
+            const contactForm = document.getElementById('contact-form');
+            contactForm.addEventListener('submit', function(event) {
+                event.preventDefault(); // 阻止表单默认提交
+    
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+    
+                fetch('https://vghegaqhi7.execute-api.us-east-1.amazonaws.com/dev/items', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ name, email, message })
+                })
+                .then(response => {
+                    if (response.ok) {
+                        return response.text();
+                    } else {
+                        throw new Error('Something went wrong');
+                    }
+                })
+                .then(data => {
+                    alert('Message sent successfully!');
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Failed to send message: ' + error.message);
+                });
+            });
         });
     </script>
-</body>
-</html>
 
 
