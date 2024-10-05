@@ -37,11 +37,16 @@ header h1 {
 
 nav ul {
     list-style: none;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-end; /* 将菜单项对齐到右边 */
+    width: 100%; /* 让菜单占满整个宽度 */
 }
 
 nav ul li {
-    display: inline;
-    margin-right: 20px;
+    margin-left: 20px; /* 每个菜单项之间增加间距 */
 }
 
 nav ul li a {
@@ -59,6 +64,7 @@ nav ul li a:hover {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    z-index: 1100; /* 确保它高于其他内容 */
 }
 
 .menu-toggle .bar {
@@ -69,6 +75,7 @@ nav ul li a:hover {
     transition: all 0.3s ease;
 }
 
+/* 激活时汉堡菜单的动画效果 */
 .menu-toggle.is-active .bar:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
 }
@@ -86,14 +93,14 @@ nav ul li a:hover {
     position: fixed;
     top: 0;
     left: 0;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -1;
-    opacity: 0.6; /* 透明度设置 */
-    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover; /* 保证视频自适应填充屏幕，不变形 */
+    object-position: center center; /* 保持视频内容在中心位置 */
+    z-index: -1; /* 视频在页面其他内容的下层 */
+    opacity: 0.6; /* 透明度调整 */
 }
+
 
 body, header, section, footer {
     position: relative;
@@ -102,6 +109,8 @@ body, header, section, footer {
 
 /* Hero Section */
 #hero {
+    position: relative;
+    z-index: 1; /* 确保其位于nav ul之下 */
     color: white;
     text-align: center;
     padding: 100px 0;
@@ -387,8 +396,14 @@ footer {
     padding: 20px 0;
 }
 
-/* 响应式设计 */
 @media (max-width: 768px) {
+    #background-video {
+        min-width: 100vw; /* 视频宽度至少为屏幕宽度 */
+        min-height: 100vh; /* 视频高度至少为屏幕高度 */
+        object-fit: cover; /* 确保视频覆盖整个屏幕而不变形 */
+        object-position: center; /* 保持视频在中心位置 */
+    }
+
     .container {
         width: 90%;
     }
@@ -408,25 +423,35 @@ footer {
 
     nav ul {
         display: none;
-        flex-direction: column;
+        flex-direction: row;
         text-align: center;
         width: 100%;
-        background-color: rgba(51, 51, 51, 0.9);
+        background-color: rgba(51, 51, 51, 0.9); /* 背景色 */
         position: absolute;
-        top: 100%;
+        top: 60px; /* 菜单出现在汉堡菜单下方 */
+        margin-top: 50px; /* 增加 margin-top 来向下移动 */
         left: 0;
+        z-index: 1000;
     }
 
+    /* 激活后的导航栏显示 */
     nav ul.active {
         display: flex;
     }
 
     nav ul li {
-        margin: 10px 0;
+        margin-left: 20px; /* 每个菜单项之间增加间距 */
     }
 }
 
 @media (max-width: 480px) {
+    #background-video {
+        min-width: 100vw;
+        min-height: 100vh;
+        object-fit: cover;
+        object-position: center; /* 保证视频内容适配小屏幕 */
+    }
+
     .project-grid {
         grid-template-columns: 1fr; /* 手机上单列布局 */
     }

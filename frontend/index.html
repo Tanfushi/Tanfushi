@@ -19,9 +19,11 @@
     </head>
 <body>
     <!-- 全局视频背景 -->
-    <video autoplay muted loop id="background-video">
+    <video autoplay muted loop playsinline id="background-video">
         <source src="myvedio.mp4" type="video/mp4">
+        Your browser does not support the video tag.
     </video>
+    
 
     <!-- Header -->
     <header>
@@ -199,13 +201,14 @@
             });
     
             // 汉堡菜单按钮显示/隐藏导航栏
-            const mobileMenu = document.querySelector('#mobile-menu');
-            const navList = document.querySelector('#nav-list');
-    
+            const mobileMenu = document.querySelector('.menu-toggle');
+            const navList = document.querySelector('nav ul');
+
             mobileMenu.addEventListener('click', function() {
-                navList.classList.toggle('active'); // 切换显示导航栏
-                mobileMenu.classList.toggle('is-active'); // 切换汉堡菜单按钮动画
+            navList.classList.toggle('active'); // 切换菜单的显示状态
+            mobileMenu.classList.toggle('is-active'); // 切换汉堡按钮动画
             });
+
     
             // 表单提交处理
             const contactForm = document.getElementById('contact-form');
