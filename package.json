@@ -10,6 +10,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@aws-amplify/ui-react": "^6.5.2",
     "@aws-sdk/client-dynamodb": "^3.664.0",
     "@aws-sdk/lib-dynamodb": "^3.664.0",
     "aws-sdk": "^2.1691.0",
