@@ -1,21 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tanfu's Personal Website</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tanfu's Personal Website</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+        
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-JFQSFJNG6N"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-JFQSFJNG6N');
+        </script>
+        
+    </head>
 <body>
+    <!-- 全局视频背景 -->
+    <video autoplay muted loop id="background-video">
+        <source src="myvedio.mp4" type="video/mp4">
+    </video>
+
     <!-- Header -->
     <header>
         <div class="container">
             <div class="logo">
                 <h1>Tanfu's Zone</h1>
             </div>
+            <!-- 汉堡菜单按钮 -->
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <!-- 导航栏 -->
             <nav>
-                <ul>
+                <ul id="nav-list">
                     <li><a href="#about">About</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#projects">Projects</a></li>
@@ -25,6 +47,8 @@
             </nav>
         </div>
     </header>
+
+    
 
     <!-- Hero Section -->
     <section id="hero">
@@ -41,7 +65,7 @@
             <h2>About Me</h2>
             <div class="about-content">
                 <img src="profile.jpg" alt="Tanfu's Photo">
-                <p>Hello! I'm Tanfu, a master student in Statistics from UIUC. I have experience in various web technologies like HTML, CSS, JavaScript, and frameworks like React.js. I'm constantly learning and love to work on innovative projects.</p>
+                <p>Hello! I'm Tanfu, a master student in Statistics from UIUC. I have experience in various data mining projects, web technologies and machine learning algorithms. I'm constantly learning and love to work on innovative projects.</p>
             </div>
         </div>
     </section>
@@ -167,20 +191,39 @@
     <!-- JavaScript 动画效果 -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+    // 滚动动画效果：Intersection Observer API
     const items = document.querySelectorAll('.timeline-item');
+
+    const observerOptions = {
+        root: null,
+        threshold: 0.1, // 当元素10%进入视口时触发
+        rootMargin: "0px"
+    };
 
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('show');
+                observer.unobserve(entry.target);  // 添加后取消观察，避免重复触发
             }
         });
-    });
+    }, observerOptions);
 
     items.forEach(item => {
         observer.observe(item);
     });
+
+    // 汉堡菜单按钮显示/隐藏导航栏
+    const mobileMenu = document.querySelector('#mobile-menu');
+    const navList = document.querySelector('#nav-list');
+
+    // 点击汉堡按钮时显示或隐藏导航菜单
+    mobileMenu.addEventListener('click', function() {
+        navList.classList.toggle('active');  // 切换导航栏的显示状态
+        mobileMenu.classList.toggle('is-active'); // 切换按钮的样式（变成X）
+    });
 });
+
     </script>
 </body>
 </html>
