@@ -46,7 +46,7 @@ nav ul {
 }
 
 nav ul li {
-    margin-left: 20px; /* 每个菜单项之间增加间距 */
+    margin-left: 15px; /* 每个菜单项之间增加间距 */
 }
 
 nav ul li a {
@@ -193,7 +193,7 @@ body, header, section, footer {
     left: 100px;
     opacity: 0;
     transform: translateY(20px);
-    transition: all 0.6s ease;
+    transition: all 0.6s ease-out;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -219,7 +219,7 @@ body, header, section, footer {
 }
 
 .timeline-item:hover {
-    background-color: #eee;
+    background-color: #f1f1f1;
     transform: scale(1.02) translateY(0);
 }
 
@@ -228,6 +228,20 @@ body, header, section, footer {
     transform: translateY(0);
 }
 
+/* 响应式设计 */
+@media (max-width: 768px) {
+    #experience::before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        left: 40px;
+    }
+
+    .timeline-item::before {
+        left: -50px;
+    }
+}
 
 /* Projects Section */
 #projects {
@@ -339,6 +353,76 @@ body, header, section, footer {
 
 .hobby-item:hover {
     transform: scale(1.05);
+}
+/* Entrepreneurship Section */
+#entrepreneurship {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 60px 0;
+    position: relative;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Motto Styling */
+#entrepreneurship h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#entrepreneurship p.motto {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 40px;
+    font-style: italic;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+/* Card Grid */
+.entrepreneurship-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+/* Card Styling */
+.entrepreneurship-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    background-size: cover;
+    background-position: center;
+    text-align: left;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.entrepreneurship-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Title and Paragraph in Cards */
+.entrepreneurship-card h3 {
+    font-size: 1.6rem;
+    color: #f45b69;
+    margin-bottom: 10px;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.entrepreneurship-card p {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 0;
 }
 
 /* Contact Section */
